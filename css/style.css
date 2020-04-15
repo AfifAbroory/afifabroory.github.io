@@ -55,13 +55,11 @@
                     margin: 10px 0 0 0;
                 }
                 .upper li.left{
-                    float: left;
                     margin: 0 5px 0 15px;
                     bottom: 0;
                     display: inline-block;
                 }
                 .upper li.right{
-                    float: right;
                     margin: 0 15px 0 5px;
                     bottom: 0;
                     display: inline-block;
