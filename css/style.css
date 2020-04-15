@@ -54,13 +54,8 @@
                 .upper{
                     margin: 10px 0 0 0;
                 }
-                .upper li.left{
-                    margin: 0 5px 0 15px;
-                    bottom: 0;
-                    display: inline-block;
-                }
-                .upper li.right{
-                    margin: 0 15px 0 5px;
+                .upper li{
+                    margin: 0 18px 0 0;
                     bottom: 0;
                     display: inline-block;
                 }
