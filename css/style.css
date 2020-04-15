@@ -46,26 +46,28 @@
 
         /* STYLE */
                 body{
-                    font-family: 'Bungee', 'cursive';
+                    font-family: 'Roboto Slab', serif;  
                     background-color: rgb(114, 173, 250);
                     color: white;
                 }
                 .container{
                     position: absolute;
                     cursor: default;
-                    left: 0;
-                    bottom: 50%;
-                    right: 0;
                     top: 50%;
-                   
+                    left: 0;
+                    transform: translate(0%, -50%);
+                    margin: auto;
+                    padding: 0;
+                    right: 0;
                 }
                 h1{
-                    font-size: 35px;
+                    font-weight: bold;
+                    font-size: 40px;
                     text-align: center;
                     margin: 0 0 30px 0;
                 }
                 p{
-                    font-size: 20px;
+                    font-size: 25px;
                     margin: 0 25px;
                     text-align: center;
                     line-height: 30px;
