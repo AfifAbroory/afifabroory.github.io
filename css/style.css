@@ -57,7 +57,7 @@
                     left: 0;
                 }
                 .upper li{
-                    margin: 0 6px;
+                    margin: 0 0 0 12px;
                     display: inline-block;
                 }
                 .upper a{
