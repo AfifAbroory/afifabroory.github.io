@@ -1,7 +1,7 @@
         /*RESET CSS*/
 
         html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        h1, h2, h3, h4, h5, h6, p, blockquote,
         a, abbr, acronym, address, big, cite, code,
         del, dfn, em, img, ins, kbd, q, s, samp,
         small, strike, strong, sub, sup, tt, var,
@@ -44,65 +44,26 @@
             border-spacing: 0;
         }
 
-        /* STYLE */
-                body{
-                    font-family: 'Baloo Paaji 2', cursive;
-                    background-color: rgb(114, 173, 250);
-                    color: white;
-                    overflow: hidden;
-                }
-                .upper{
-                    margin: 10px 0 0 0;
-                    right: 0;
-                    left: 0;
-                }
-                .upper li{
-                    margin: 0 0 0 14px;
-                    display: inline-block;
-                }
-                .upper a{
-                    font: 18 px;
-                    color: white;
-                    text-decoration: none;
-                }
-                .container{
-                    position: absolute;
-                    cursor: default;
-                    top: 50%;
-                    left: 0;
-                    transform: translate(0%, -50%);
-                    margin: auto;
-                    padding: 0;
-                    right: 0;
-                }
-                h1{
-                    font-weight: bold;
-                    font-size: 45px;
-                    text-align: center;
-                    margin: 0 0 30px 0;
-                }
-                p{
-                    font-size: 30px;
-                    margin: 0 30px;
-                    text-align: center;
-                    line-height: 30px;
-                }
-                .footer{
-                    bottom: 0;
-                    right: 0;
-                    left: 0;
-                    position: absolute;
-                }
-                .footer p{
-                    line-height: 0;
-                    font-size: 17px;
-                    color: white;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    position: absolute;
-                    margin: 0 0 10px 0;
-                }
-                .material-icons{
-                    font-size: 40px;
-                }
+
+body{
+	background-color: black;
+}
+
+pre{
+	color: white;
+	text-align: center
+}
+
+p{
+	color: white;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+h2{
+	color: white;
+	font-size: 25px;
+}
