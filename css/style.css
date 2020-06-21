@@ -44,28 +44,29 @@
                 border-spacing: 0;
             }
 
+
     body{
-    	background-color: black;
-        font-family: "Terminal";
+        font-family: arial;
     }
 
     pre{
-    	color: white;
-    	text-align: center
+    	color: darkgreen;
+        margin-left: 15px;
     }
 
     p{
-    	color: white;
+    	color: black;
+        margin-left: 15px;
     }
 
     a{
-    	color: white;
-        margin-left: 10px;
+    	color: darkpurple;
+        margin-left: 15px;
     }
 
     h2{
-    	color: white;
+    	color: darkblue;
     	font-size: 25px;
         margin-bottom: 5px;
-        margin-left: 5px;
+        margin-left: 15px;
     }
