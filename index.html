@@ -1,175 +1,321 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Polygon</title>
-	<style type="text/css">
-		* {
-			font-family: Arial, cursive;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>afifabroory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/62495819?v=4" type="image/png">
 </head>
+
 <body>
-	<h1>MENGGAMBAR PENTANGON DI PYGAME</h1>
-	<a href=https://sites.google.com/view/hrabrlinux/index>Linux Handbook</a>
-	<br>
-	<b>Syntax Polygon pada Pygame</b>
-	<pre>
-		<em>pygame.draw.polygon(surface, color, ((x1, y1), (x2, x2), (x3, y3), (x4, y4), (x5, x5)))</em>
-	</pre>
-	<b>Input:</b>
-	<ol>
-		<li>Koordinat x1</li>
-		<li>Koordinat y1</li>
-		<li>Radius</li>
-	</ol>
-	<br>
-	<h2>Rumus mencari titik koordinat</h2>
-	<ul>
-		<li>Unutk (x2, y2)</li>
-		<pre>
-x2 = x1 + (r  ⋅cos (18°))
-y2 = r - (r  ⋅sin (18°)) + y1
-		</pre>
-		<li>Untuk (x3, y3)</li>
-		<pre>
-x3 = |x1 + (r  ⋅cos (-54°))|
-y3 = r + |r  ⋅sin (-54°)| + y1			
-		</pre>
-		<li>Untuk (x4, y4)</li>
-		<pre>
-x4 = x1 - (r  ⋅cos (-54°))
-y4 = y3
-		</pre>
-		<li>
-x5 = x1 - (r  ⋅cos (18°)
-y5 = y2	
-		</li>
-	</ul>
-	<br>
-	<b>Kenapa 18°?</b>
-	<p>
-		Misal:
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="profile">
+        <div id="profile_img" style="background: url(https://avatars.githubusercontent.com/u/62495819?v=4) center;">
+        </div>
+        <div id="username"><span style="display:block;">Muhammad Afif Abroory</span></div>
+        <span id="userbio" style="display: block;">Software Developer</span><br>
+        <div id="about">
+            <span style="display:none;"><i class="fas fa-users"></i> &nbsp; null</span>
+            <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
+            <span style="display:none;"><i class="fas fa-link"></i> &nbsp; <a href=""></a></span>
+            <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Banjarmasin,
+                Indonesia</span>
+            <span style="display:none;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
+            <div class="socials">
+                <span style="display:none !important;"><a href="https://www.twitter.com/null" target="_blank"
+                        class="socials"><i class="fab fa-twitter"></i></a></span>
+                <span style="display:none !important;"><a href="https://www.dribbble.com/null" target="_blank"
+                        class="socials"><i class="fab fa-dribbble"></i></a></span>
+                <span style="display:block;"><a href="https://www.linkedin.com/in/afifabroory/" target="_blank"
+                        class="socials"><i class="fab fa-github"></i></a></span>
+                <span style="display:block;"><a href="https://www.linkedin.com/in/afifabroory/" target="_blank"
+                        class="socials"><i class="fab fa-linkedin-in"></i></a></span>
+                <span style="display:none !important;"><a href="https://www.medium.com/@null/" target="_blank"
+                        class="socials"><i class="fab fa-medium-m"></i></a></span>
+            </div>
+        </div>
+    </div>
+    <div id="display">
+        <div id="work">
+            <h1>Projects.</h1>
+            <div class="projects" id="work_section">
+                <a href="https://github.com/afifabroory/API-Pemilihan-Ketua-Kelas" target="_blank">
+                    <section>
+                        <div class="section_title">API-Pemilihan-Ketua-Kelas</div>
+                        <div class="about_section">
+                            <span style="display:block;">API for my class leader election using Lumen Framework</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; PHP, Dockerfile &
+                                Shell</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/FE-Pemilihan-Ketua-Kelas" target="_blank">
+                    <section>
+                        <div class="section_title">FE-Pemilihan-Ketua-Kelas</div>
+                        <div class="about_section">
+                            <span style="display:block;">Front End implementation using TailwindCSS + Svelte</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Svelte, JavaScript,
+                                HTML & CSS</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/SudokuAreEz-SAT" target="_blank">
+                    <section>
+                        <div class="section_title">SudokuAreEz-SAT</div>
+                        <div class="about_section">
+                            <span style="display:block;">My first ambitious project, sudoku solver. Formulating a sudoku
+                                puzzle as a SAT formula.</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/MySQL-dump2Neo4J" target="_blank">
+                    <section>
+                        <div class="section_title">MySQL-dump2Neo4J</div>
+                        <div class="about_section">
+                            <span style="display:block;">MySQL dump to Neo4J</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; C++ & CMake</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/Propositional-Logic-Calculator" target="_blank">
+                    <section>
+                        <div class="section_title">Propositional-Logic-Calculator</div>
+                        <div class="about_section">
+                            <span style="display:block;">My first compiler construction project (Front-End only).
+                                Propositional logic calculator using Bison and Flex.</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; C, Yacc, Lex &
+                                Shell</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/BlessedShoesWeb" target="_blank">
+                    <section>
+                        <div class="section_title">BlessedShoesWeb</div>
+                        <div class="about_section">
+                            <span style="display:block;">A website to monitor order progress. Written in Vanilla
+                                JS</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML, CSS &
+                                JavaScript</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/CPProgress-Web" target="_blank">
+                    <section>
+                        <div class="section_title">CPProgress-Web</div>
+                        <div class="about_section">
+                            <span style="display:block;">A website to monitor my progress on Competitive
+                                Programming.</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML &
+                                JavaScript</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/CompetitiveProgramming" target="_blank">
+                    <section>
+                        <div class="section_title">CompetitiveProgramming</div>
+                        <div class="about_section">
+                            <span style="display:block;">Repository to store my code during solving Competitive
+                                Programming problems</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; C/C++, Python, Java &
+                                Shell</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/PomodoroApp" target="_blank">
+                    <section>
+                        <div class="section_title">PomodoroApp</div>
+                        <div class="about_section">
+                            <span style="display:block;">A Pomodoro App</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; CSS, PHP &
+                                JavaScript</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/Notes-Teori-CS" target="_blank">
+                    <section>
+                        <div class="section_title">Notes-Teori-CS</div>
+                        <div class="about_section">
+                            <span style="display:block;">Repository yang berisi notes pribadi materi di CS atau
+                                lainnya</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:blcok;"><i class="fas fa-code"></i>&nbsp; README</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/Propositional-Logic-Calculator-JS" target="_blank">
+                    <section>
+                        <div class="section_title">Propositional-Logic-Calculator-JS</div>
+                        <div class="about_section">
+                            <span style="display:block;">A propositional logic calculator written in JavaScript with
+                                help of Jison (a scanner and parser generator)</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Yacc &
+                                JavaScript</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/dasar-lang-specs" target="_blank">
+                    <section>
+                        <div class="section_title">dasar-lang-specs</div>
+                        <div class="about_section">
+                            <span style="display:block;">"Dasar" Programming Language Specification
+                                (Experimental)</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; TeX</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/MatricesMultiplicationDLL" target="_blank">
+                    <section>
+                        <div class="section_title">MatricesMultiplicationDLL</div>
+                        <div class="about_section">
+                            <span style="display:block;">Dynamic-link library for Matrices Multiplication</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; C++</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/afifabroory/CPProgress-CLI" target="_blank">
+                    <section>
+                        <div class="section_title">CPProgress-CLI</div>
+                        <div class="about_section">
+                            <span style="display:block;">CLI I/O for CPProgress-Web using Firebase Realtime Database
+                                from Rest API call</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
+                        </div>
+                    </section>
+                </a>
+                </a>
+                <a href="https://github.com/afifabroory/MatrixMultiplication" target="_blank">
+                    <section>
+                        <div class="section_title">MatrixMultiplication</div>
+                        <div class="about_section">
+                            <span style="display:block;">Software Optimization. A case study of matrix
+                                multiplication.</span>
+                        </div>
+                        <div class="bottom_section">
+                            <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; C</span>
+                        </div>
+                    </section>
+                </a>
+            </div>
+        </div>
+        <div id="forks" style="display:none;">
+            <h1>Forks.</h1>
+            <div class="projects" id="forks_section"></div>
+        </div>
+        <div id="blog_section">
+            <h1>Blog.</h1>
+            <div id="blogs"></div>
+        </div>
+        <div id="footer">
+            <span>
+                Thanks to
+                <a href="https://github.com/imfunniee" target="_blank">@imfunnie (GitHub)</a>
+                for such amazing template!
+            </span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function () {
+            document.getElementById("loading").classList.add("animated");
+            document.getElementById("loading").classList.add("fadeOut");
+            setTimeout(function () {
+                document.getElementById("loading").classList.remove("animated");
+                document.getElementById("loading").classList.remove("fadeOut");
+                document.getElementById("loading").style.display = "none";
+            }, 800);
+        }, 1500);
+        $.getJSON("blog.json", function (blog) {
+            blog = blog || [];
+            if (blog.length == 0) {
+                return (document.getElementById("blog_section").style.display =
+                    "none");
+            }
+            for (var i = 0; i < blog.length; i++) {
+                $("#blogs").append(`
+            <a href="./blog/${blog[i].url_title}/" target="_blank">
+                <section>
+                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
+                    <div class="blog_container">
+                        <div class="section_title">${blog[i].title}</div>
+                        <div class="about_section">
+                            ${blog[i].sub_title}
+                        </div>
+                    </div>
+                </section>
+            </a>
+            `);
+            }
+        }).fail(function () {
+            return (document.getElementById("blog_section").style.display = "none");
+        });
+    </script>
 
-<ol>
-	<li>(x1, x1) adalah A</li>
-	<li>(x2, x2) adalah B</li>
-	<li>(x3, x3) adalah C</li>
-	<li>(x4, y4) adalah D</li>
-	<li>(x5, y5) adalah E</li>
-</ol>
-<br>
-Ingat Lingkaran. Lingakaran memiliki rotasi 360° <br>dan sisi dari Pentagon ada 5, <br> maka 360 ÷ 5 adalah 72° <br> atau bisa diartikan dari titik AOB, BOC, COD, DOE, EOA memliki sudut 72°.<br>
-Maka Sudut AOB semestinya adalah 90°, namun karena ini adalah Pentagon maka OB memiliki sudut 18° (dari 90 - 72 = 18°). <br>Sedangkan untuk -54° dari 72 - 18 = 54°, dan karena kita mencari C yang berada pada kuadrant 3 dan 4 yang artinya 54° menjadi negatif -54°. <br>
-<br><br>
-<b>Kenapa D dan E hasilnya kurang lebih sama?</b>
-<br>
-<br>
-Karena B, C dan D, E pada Pentagon memiliki posisi X-axis dan Y-axis yang kurang lebih sama. <br> Lebih jelas lagi baca tentang: <a href="https://en.wikipedia.org/wiki/Point_reflection">Point reflection</a> atau <a href="https://en.wikipedia.org/wiki/Symmetry">Symmetry</a>. Intinya Point reflection atau Symmetry ini mirip seperti sifat cermin.
-	</p>
-<br>
-<br>
-<em><b>Contoh Gambar dengan Radius 50</b></em>
-<br>
-<br>
-<img src="img/XAxis-YAxis.png" style="width: 50%" alt=" Hmm.. Something wrong :/">
-<br>
-<img src="img/Pentagon.png" style="width: 50%" alt=" Hmm.. Something wrong :/">
-<br>
-<h2>Implementasi Rumus pada Python</h2>
-<pre>
-import math
+    <script>
+        const magicProjectsGrid = new MagicGrid({
+            container: "#work_section",
+            animate: false,
+            gutter: 30, // default gutter size
+            static: true,
+            useMin: false,
+            maxColumns: 2,
+            useTransform: true
+        });
 
-def Polygon(x1, y1, r):
-    x2 = (x1 + (r * math.cos(math.radians(18)))) 
-    y2 = (r - (r * math.sin(math.radians(18)))) + y1
+        const magicForksGrid = new MagicGrid({
+            container: "#forks_section",
+            animate: false,
+            gutter: 30, // default gutter size
+            static: true,
+            useMin: false,
+            maxColumns: 2,
+            useTransform: true
+        });
 
-    x3 = abs((x1 + (r * math.cos(math.radians(-54)))))
-    y3 = r + abs((r * math.sin(math.radians(-54)))) +y1
+        $("document").ready(() => {
+            magicProjectsGrid.listen();
+            magicForksGrid.listen();
+        });
+    </script>
 
-    x4 = x1 - (r * math.cos(math.radians(-54)))
-    y4 = y3
 
-    x5 = x1 - (r * math.cos(math.radians(18)))
-    y5 = y2
-
-    return x2, y2, x3, y3, x4, y4, x5, y5
-
-x1 = abs(int(input("Enter x: ")))
-y1 = abs(int(input("Enter y: ")))
-r = abs(int(input("Enter radius: ")))
-
-x2, y2, x3, y3, x4, y4, x5, y5 = Polygon(x1, y1, r)
-
-<b>Input:</b>
-	Enter x: 350
-	Enter y: 350
-	Enter radius: 50
-<b>Output:</b>
-	(x1, x2) =  350 350
-	(x2, y2) =  682.8697807033037 291.84405196876844
-	(x3, y3) =  555.7248383023656 683.1559480312317
-	(x4, y4) =  144.2751616976344 683.1559480312317
-	(x5, y5) =  17.130219296696282 291.84405196876844
-</pre>
-<br>
-<b>Kenapa Nilai nya selalu Positif dan besar dari 0?</b>
-<br>
-Untuk di pygame ini,koordinate kratesius seperti berada di kudarant 4, namun positif. <br>Oleh karena itu beberapa rumus ada yang menggunakan nilai absolute (Semua yang negatif akan menjadi positif).
-<pre>
-  	X jika, X > 0
-|X| {
-
-	-X jika, X < 0
-</pre>
-<br>
-<b>Gambaran Koordinat kratesius pada pygame dengan ukuran layar 600x600</b>
-<br>
-<br>
-<img src="img/Ruler.PNG" style="width: 50%" alt=" Hmm.. Something wrong :/">
-<h2>Pengujian Rumus (Layar: 600x600)</h2>
-<ol>
-	<li><b>x1 = 250; y1 = 300; r = 100;</b></li>
-	<img src="img/250, 300, 100.PNG" alt=" Hmm.. Something wrong :/">
-	<br>
-	<br>
-	<li><b>x1 = 300; y1 = 400; r = 50;</b></li>
-	<img src="img/300,400, 50.PNG" alt=" Hmm.. Something wrong :/">
-	<br>
-	<br>
-	<li><b>x1 = 450; y1 = 200; r = 50;</b></li>
-	<img src="img/450, 200, 50.PNG" alt=" Hmm.. Something wrong :/">
-	<pre>
-Warna merah adalah posisi (x1, y1) <br> sedangkan garis dari warna merah ke warna biru adalah radius dari (x1, y1) ke titik tengah O
-	</pre>
-	<li><b>x1 = 250; y1 = 300; r = 100;</b></li>
-	<img src="img/300, 400, 100, Radius.PNG" alt=" Hmm.. Something wrong :/">
-	<pre>
-Garis Hitam adalah radius dari titik tengah (Biru)
-	</pre>
-</ol>
-<p>
-Akhir Kata...
-<br>
-<br>
-Maaf kalau mungkin bahasanya terbelit dan tulisan tidak terstruktur atau ternyata rumusnya memang sama atau sudah ada di buku-buku sekolah...
-<br>
-<br>
-Alasan ini dibuat karena ingin menyelesaikan masalah untuk mencari koordinat Pentagon yang pas dengan hanya mengetahui satu titik saja.
-<br>
-<br>
-Rumus ini dibuat dengan melihat sebuah referensi <a href="https://math.stackexchange.com/questions/1990504/how-to-find-the-coordinates-of-the-vertices-of-a-pentagon-centered-at-the-origin">math.stackexchange</a>, dan menfasirkan sendiri agar dapat diimplementasi di pygame. Dan ini adalah usaha utnuk mencari koordinat yang pas untuk membentuk Pentagon. Karena inti dari Matematika adalah problem solving bukan wajib hafal rumus.
-<br>
-<br>
-<em>Komputer dengan Matematika tidak bisa dilepaskan.</em>
-<br>
-<br>
-Referensi dari: <a href="https://math.stackexchange.com/questions/1990504/how-to-find-the-coordinates-of-the-vertices-of-a-pentagon-centered-at-the-origin">math.stackexchange</a>
-</p>
-<br>
-<br>
-<hr>
-Teknik menguasai Algoritma adalah pelajari Paradigma Algoritma, kenapa? Karena jika kita memahami Paradigma maka kita tahu konsep/kerangka berfikir, kerangka kerja (framework), template, dari Algoritma.
-<br>
-Seperti apakah Paradigma Algoritma itu? Salah satu Paradigma Algoritma adalah divide and conquer yang membagi permasalahan menjadi lebih kecil kemudian digabungkan, seperti Merge Sort.
 </body>
+
 </html>
